@@ -1,0 +1,27 @@
+{
+    "builders":
+    [
+      {
+        "type": "qemu",
+        "iso_url": "./CentOS-7-x86_64-Minimal-1810.iso",
+        "iso_checksum": "bd43d41e01c2a46b3cb23eb9139dce4b",
+        "iso_checksum_type": "md5",
+        "output_directory": "./output",
+        "shutdown_command": "echo 'packer' | sudo -S shutdown -P now",
+        "disk_size": 5000,
+        "format": "qcow2",
+        "accelerator": "kvm",
+        "http_directory": "path/to/httpdir",
+        "ssh_username": "root",
+        "ssh_password": "admin",
+        "ssh_timeout": "20m",
+        "vm_name": "tdhtest",
+        "net_device": "virtio-net",
+        "disk_interface": "virtio",
+        "boot_wait": "10s",
+        "boot_command": [
+          "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/centos6-ks.cfg<enter><wait>"
+        ]
+      }
+    ]
+  }
