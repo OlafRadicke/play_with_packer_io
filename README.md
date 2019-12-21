@@ -1,4 +1,4 @@
-# playing_withe_packer_io #
+# play_withe_packer_io #
 
 Check out hashicorp packer.io
 
